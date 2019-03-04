@@ -87,14 +87,24 @@
 <meta property="og:site_name" content="方君">
 <meta property="og:description" content="week5.day2 今日知识点 跨域  同步异步概念  回调地狱   1、跨域 同源策略 它是由Netscape提出的一个著名的安全策略。 同源策略（Same origin policy）是一种约定，它是浏览器最核心也最基本的安全功能，如果缺少了同源策略，则浏览器的正常功能可能都会受到影响。可以说Web是构建在同源策略基础之上的，浏览器只是针对同源策略的一种实现。      规定：协议，域名，端">
 <meta property="og:locale" content="zh-cn">
+<<<<<<< HEAD
 <meta property="og:image" content="https://github.com/qiangweishangluo/qiangweishangluo.github.io/2019/03/04/day2/C:/Users/zhao/Desktop/素材/同源判定.png">
 <meta property="og:image" content="https://github.com/qiangweishangluo/qiangweishangluo.github.io/2019/03/04/day2/C:/Users/zhao/Desktop/素材/js线程.png">
 <meta property="og:image" content="https://github.com/qiangweishangluo/qiangweishangluo.github.io/2019/03/04/day2/C:/Users/zhao/Desktop/promise/浏览器线程.jpg">
+=======
+<meta property="og:image" content="c:/Users/zhao/Desktop/素材/同源判定.png">
+<meta property="og:image" content="c:/Users/zhao/Desktop/素材/js线程.png">
+<meta property="og:image" content="c:/Users/zhao/Desktop/promise/浏览器线程.jpg">
+>>>>>>> a7368cc857c4c239f9fcbe991681c5c72a2fc4d0
 <meta property="og:updated_time" content="2019-03-04T13:33:16.816Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="跨域+同步异步">
 <meta name="twitter:description" content="week5.day2 今日知识点 跨域  同步异步概念  回调地狱   1、跨域 同源策略 它是由Netscape提出的一个著名的安全策略。 同源策略（Same origin policy）是一种约定，它是浏览器最核心也最基本的安全功能，如果缺少了同源策略，则浏览器的正常功能可能都会受到影响。可以说Web是构建在同源策略基础之上的，浏览器只是针对同源策略的一种实现。      规定：协议，域名，端">
+<<<<<<< HEAD
 <meta name="twitter:image" content="https://github.com/qiangweishangluo/qiangweishangluo.github.io/2019/03/04/day2/C:/Users/zhao/Desktop/素材/同源判定.png">
+=======
+<meta name="twitter:image" content="c:/Users/zhao/Desktop/素材/同源判定.png">
+>>>>>>> a7368cc857c4c239f9fcbe991681c5c72a2fc4d0
 
 
 
@@ -352,7 +362,11 @@
 </li>
 </ol>
 <p>   规定：协议，域名，端口相同即为同源。</p>
+<<<<<<< HEAD
 <p>   <img src="/qiangweishangluo/qiangweishangluo.github.io/2019/03/04/day2/C:/Users\zhao\Desktop\素材\同源判定.png" alt="同源判定"></p>
+=======
+<p>   <img src="C:\Users\zhao\Desktop\素材\同源判定.png" alt="同源判定"></p>
+>>>>>>> a7368cc857c4c239f9fcbe991681c5c72a2fc4d0
 <p>   拓展：</p>
 <ol>
 <li><p>域名与ip的关系：</p>
@@ -413,13 +427,21 @@
 <ol>
 <li>event loop事件循环    task queue</li>
 </ol>
+<<<<<<< HEAD
 <p><img src="/qiangweishangluo/qiangweishangluo.github.io/2019/03/04/day2/C:/Users\zhao\Desktop\素材\js线程.png" alt="js线程"></p>
+=======
+<p><img src="C:\Users\zhao\Desktop\素材\js线程.png" alt="js线程"></p>
+>>>>>>> a7368cc857c4c239f9fcbe991681c5c72a2fc4d0
 <ol start="2">
 <li><p>浏览器线程</p>
 <p>js是单线程的，但是<strong>浏览器不是单线程</strong>的</p>
 </li>
 </ol>
+<<<<<<< HEAD
 <p><img src="/qiangweishangluo/qiangweishangluo.github.io/2019/03/04/day2/C:/Users\zhao\Desktop\promise\浏览器线程.jpg" alt="浏览器线程"></p>
+=======
+<p><img src="C:\Users\zhao\Desktop\promise\浏览器线程.jpg" alt="浏览器线程"></p>
+>>>>>>> a7368cc857c4c239f9fcbe991681c5c72a2fc4d0
 <h1 id="3、回调地狱（callback-hell）"><a href="#3、回调地狱（callback-hell）" class="headerlink" title="3、回调地狱（callback hell）"></a>3、回调地狱（callback hell）</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> sayHello = <span class="function"><span class="keyword">function</span>(<span class="params">name , callback</span>)</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"hello"</span> +name);</span><br><span class="line">    setTimeout(callback(),<span class="number">1000</span>);</span><br><span class="line">&#125;</span><br><span class="line">sayHello(<span class="string">"蒙多"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    sayHello(<span class="string">"哪吒"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        sayHello(<span class="string">"魔王"</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">            <span class="built_in">console</span>.log(<span class="string">"你们都是弟弟"</span>);</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
       
