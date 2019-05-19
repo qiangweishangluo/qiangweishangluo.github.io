@@ -79,18 +79,18 @@
 
 
 
-<meta name="description" content="设计模式代码设计经验总结（一般问题的解决方案） 这些解决方案是众多软件开发人员经过相当长的一段时间的试验和错误总结出来的。 分类：  创建型 创建对象的方式  结构型 关注类与对象的组合，继承用来使组合对象获得新功能  行为型 对象间的通信   单例模式Single mode一个构造函数只实例化出一个实例对象。 1234567891011function Singlemode()&amp;#123;">
+<meta name="description" content="node转换json文件为excel文件12345678910111213141516171819202122232425var fs=require(&quot;fs&quot;);var excel=require(&quot;exceljs&quot;); 			 //npm i exceljsfs.readFile(&quot;text.json&quot;,&quot;utf8&quot;,function(err,data)&amp;#123;  if(err)conso">
 <meta name="keywords" content="方君,web,javascript,技术分享">
 <meta property="og:type" content="article">
-<meta property="og:title" content="单例模式，观察者模式">
-<meta property="og:url" content="http://yoursite.com/2019/04/24/6-3/index.html">
+<meta property="og:title" content="jsonToExcel">
+<meta property="og:url" content="http://yoursite.com/2019/05/19/jsonToExcel/index.html">
 <meta property="og:site_name" content="方君">
-<meta property="og:description" content="设计模式代码设计经验总结（一般问题的解决方案） 这些解决方案是众多软件开发人员经过相当长的一段时间的试验和错误总结出来的。 分类：  创建型 创建对象的方式  结构型 关注类与对象的组合，继承用来使组合对象获得新功能  行为型 对象间的通信   单例模式Single mode一个构造函数只实例化出一个实例对象。 1234567891011function Singlemode()&amp;#123;">
+<meta property="og:description" content="node转换json文件为excel文件12345678910111213141516171819202122232425var fs=require(&quot;fs&quot;);var excel=require(&quot;exceljs&quot;); 			 //npm i exceljsfs.readFile(&quot;text.json&quot;,&quot;utf8&quot;,function(err,data)&amp;#123;  if(err)conso">
 <meta property="og:locale" content="zh-cn">
-<meta property="og:updated_time" content="2019-04-24T13:09:21.403Z">
+<meta property="og:updated_time" content="2019-05-19T03:54:58.855Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="单例模式，观察者模式">
-<meta name="twitter:description" content="设计模式代码设计经验总结（一般问题的解决方案） 这些解决方案是众多软件开发人员经过相当长的一段时间的试验和错误总结出来的。 分类：  创建型 创建对象的方式  结构型 关注类与对象的组合，继承用来使组合对象获得新功能  行为型 对象间的通信   单例模式Single mode一个构造函数只实例化出一个实例对象。 1234567891011function Singlemode()&amp;#123;">
+<meta name="twitter:title" content="jsonToExcel">
+<meta name="twitter:description" content="node转换json文件为excel文件12345678910111213141516171819202122232425var fs=require(&quot;fs&quot;);var excel=require(&quot;exceljs&quot;); 			 //npm i exceljsfs.readFile(&quot;text.json&quot;,&quot;utf8&quot;,function(err,data)&amp;#123;  if(err)conso">
 
 
 
@@ -120,13 +120,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2019/04/24/6-3/">
+  <link rel="canonical" href="http://yoursite.com/2019/05/19/jsonToExcel/">
 
 
 
 
 
-  <title>单例模式，观察者模式 | 方君</title>
+  <title>jsonToExcel | 方君</title>
   
 
 
@@ -243,7 +243,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/24/6-3/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/05/19/jsonToExcel/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="方君">
@@ -260,7 +260,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">单例模式，观察者模式</h1>
+          <h1 class="post-title" itemprop="name headline">jsonToExcel</h1>
         
 
         <div class="post-meta">
@@ -272,8 +272,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-24T20:04:22+08:00">
-                2019-04-24
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-05-19T11:51:30+08:00">
+                2019-05-19
               </time>
             
 
@@ -295,8 +295,8 @@
               
               
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/笔记/" itemprop="url" rel="index">
-                    <span itemprop="name">笔记</span>
+                  <a href="/categories/node/" itemprop="url" rel="index">
+                    <span itemprop="name">node</span>
                   </a>
                 </span>
 
@@ -332,29 +332,7 @@
       
 
       
-        <h1 id="设计模式"><a href="#设计模式" class="headerlink" title="设计模式"></a>设计模式</h1><p>代码设计经验总结（一般问题的解决方案）</p>
-<p>这些解决方案是众多软件开发人员经过相当长的一段时间的试验和错误总结出来的。</p>
-<p>分类：</p>
-<ol>
-<li><p>创建型</p>
-<p>创建对象的方式</p>
-</li>
-<li><p>结构型</p>
-<p>关注类与对象的组合，继承用来使组合对象获得新功能</p>
-</li>
-<li><p>行为型</p>
-<p>对象间的通信</p>
-</li>
-</ol>
-<h1 id="单例模式Single-mode"><a href="#单例模式Single-mode" class="headerlink" title="单例模式Single mode"></a>单例模式Single mode</h1><p>一个构造函数只实例化出一个实例对象。</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Singlemode</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(Singlemode.key!=<span class="literal">undefined</span>)   <span class="comment">//2当本构造函数的属性key有值时</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> Singlemode.key;      <span class="comment">//3返回绑定在本构造函数属性key中的实例</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">this</span>.name=<span class="string">"abc"</span>;</span><br><span class="line">    Singlemode.key=<span class="keyword">this</span>;            <span class="comment">//1创造一个构造函数本身的属性key，存入这个构造函数实例化出的一个实例</span></span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> a=<span class="keyword">new</span> Singlemode();</span><br><span class="line"><span class="keyword">var</span> b=<span class="keyword">new</span> Singlemode();</span><br><span class="line"><span class="built_in">console</span>.log(a===b);</span><br></pre></td></tr></table></figure>
-<p>应用场景：只能运行一个情况下。（弹窗）</p>
-<h1 id="观察者模式（订阅发布者模式）"><a href="#观察者模式（订阅发布者模式）" class="headerlink" title="观察者模式（订阅发布者模式）"></a>观察者模式（订阅发布者模式）</h1><ol>
-<li>观察者（订阅者）</li>
-<li>发布者</li>
-</ol>
-<p>一对多的发布模式</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> publish = &#123;</span><br><span class="line">    readerList:[], <span class="comment">//订阅者名单</span></span><br><span class="line">    sub:<span class="function"><span class="keyword">function</span>(<span class="params">reader</span>)</span>&#123;<span class="comment">//订阅功能</span></span><br><span class="line">        <span class="keyword">this</span>.readerList.push(reader);</span><br><span class="line">    &#125;,</span><br><span class="line">    unsub:<span class="function"><span class="keyword">function</span>(<span class="params">reader</span>)</span>&#123;<span class="comment">//退订功能</span></span><br><span class="line">        <span class="keyword">var</span> index=<span class="keyword">this</span>.readerList.indexOf(reader);</span><br><span class="line">        <span class="keyword">this</span>.readerList.splice(index,<span class="number">1</span>); <span class="comment">//splice(位置，删除个数，增加内容)</span></span><br><span class="line">         <span class="comment">/*this.fensiList.forEach(function(element,index)&#123;</span></span><br><span class="line"><span class="comment">            if(element.name==qfensi)</span></span><br><span class="line"><span class="comment">            &#123;</span></span><br><span class="line"><span class="comment">              console.log(zhubo.fensiList);</span></span><br><span class="line"><span class="comment">              zhubo.fensiList.splice(index,1);</span></span><br><span class="line"><span class="comment">            &#125;</span></span><br><span class="line"><span class="comment">            </span></span><br><span class="line"><span class="comment">          &#125;)*/</span></span><br><span class="line">    &#125;,</span><br><span class="line">    pub:<span class="function"><span class="keyword">function</span>(<span class="params">msg</span>)</span>&#123;      <span class="comment">//发布功能</span></span><br><span class="line">        <span class="keyword">this</span>.readerList.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">reader</span>)</span>&#123;</span><br><span class="line">            reader.response(msg);</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">CreateReader</span>(<span class="params">name</span>)   //订阅者构造器</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.name=name;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">CreateReader.prototype.response=<span class="function"><span class="keyword">function</span>(<span class="params">msg</span>)</span>&#123;      <span class="comment">//利用原型  接受信息</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="keyword">this</span>.name+<span class="string">"收到信息"</span>+msg);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> dongfang=<span class="keyword">new</span> CreateReader(<span class="string">"dongfang"</span>);     <span class="comment">//实例化订阅者实例</span></span><br><span class="line"></span><br><span class="line">publish.sub(dongfang);             <span class="comment">//订阅者订阅</span></span><br><span class="line">publish.pub(<span class="string">"我是宝强，我绿了"</span>);            <span class="comment">//发布者发布</span></span><br></pre></td></tr></table></figure>
+        <h2 id="node转换json文件为excel文件"><a href="#node转换json文件为excel文件" class="headerlink" title="node转换json文件为excel文件"></a>node转换json文件为excel文件</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> fs=<span class="built_in">require</span>(<span class="string">"fs"</span>);</span><br><span class="line"><span class="keyword">var</span> excel=<span class="built_in">require</span>(<span class="string">"exceljs"</span>); 			 <span class="comment">//npm i exceljs</span></span><br><span class="line"></span><br><span class="line">fs.readFile(<span class="string">"text.json"</span>,<span class="string">"utf8"</span>,<span class="function"><span class="keyword">function</span>(<span class="params">err,data</span>)</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(err)<span class="built_in">console</span>.log(err);</span><br><span class="line">    </span><br><span class="line">  <span class="keyword">var</span> result=<span class="built_in">JSON</span>.parse(data);          <span class="comment">//读取json</span></span><br><span class="line">  <span class="keyword">var</span> workbook=<span class="keyword">new</span> excel.Workbook();</span><br><span class="line">  <span class="keyword">var</span> worksheet=workbook.addWorksheet(<span class="string">"mySheet"</span>);   <span class="comment">//创建表格</span></span><br><span class="line"></span><br><span class="line">  worksheet.columns=[&#123;                  <span class="comment">//创建列（列名，对应数据键值，宽度）</span></span><br><span class="line">    header:<span class="string">"用户名"</span>,<span class="attr">key</span>:<span class="string">"name"</span>,<span class="attr">width</span>:<span class="number">10</span></span><br><span class="line">  &#125;,&#123;</span><br><span class="line">    header:<span class="string">"年龄"</span>,<span class="attr">key</span>:<span class="string">"age"</span>,<span class="attr">width</span>:<span class="number">10</span></span><br><span class="line">  &#125;];</span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i <span class="keyword">in</span> result)&#123;                 <span class="comment">//录入数据</span></span><br><span class="line">    worksheet.addRow(result[i]);</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  workbook.xlsx.writeFile(<span class="string">"text.xlsx"</span>).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;     <span class="comment">//输出</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"saved"</span>);</span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
 
       
     </div>
@@ -379,8 +357,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2019/04/24/6-2/" rel="next" title="闭包">
-                <i class="fa fa-chevron-left"></i> 闭包
+              <a href="/2019/04/24/基础知识/" rel="next" title="基础知识">
+                <i class="fa fa-chevron-left"></i> 基础知识
               </a>
             
           </div>
@@ -388,10 +366,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2019/04/24/6-4/" rel="prev" title="jquery">
-                jquery <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -530,7 +504,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#设计模式"><span class="nav-number">1.</span> <span class="nav-text">设计模式</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#单例模式Single-mode"><span class="nav-number">2.</span> <span class="nav-text">单例模式Single mode</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#观察者模式（订阅发布者模式）"><span class="nav-number">3.</span> <span class="nav-text">观察者模式（订阅发布者模式）</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#node转换json文件为excel文件"><span class="nav-number">1.</span> <span class="nav-text">node转换json文件为excel文件</span></a></li></ol></div>
             
 
           </div>
