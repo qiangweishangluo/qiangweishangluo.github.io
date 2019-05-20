@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next pisces use-motion" lang="zh-cn">
+<head><meta name="generator" content="Hexo 3.8.0">
+  <meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform">
+<meta http-equiv="Cache-Control" content="no-siteapp">
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css">
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css">
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css">
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT">
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="json 制作jquery插件 es6 class extend bootstrap前端样式框架（额外内容）  jsonJavaScript Object Notation      javascript对象表示法 通用的，描述对象的文本格式（独立于计算机语言与平台） javascript用JSON描述对象（json格式与创建javascript对象相同） json语法规则：  数据以键值对形式">
+<meta name="keywords" content="方君,web,javascript,技术分享">
+<meta property="og:type" content="article">
+<meta property="og:title" content="json,es6  面向对象">
+<meta property="og:url" content="http://yoursite.com/2019/04/24/7-1/index.html">
+<meta property="og:site_name" content="方君">
+<meta property="og:description" content="json 制作jquery插件 es6 class extend bootstrap前端样式框架（额外内容）  jsonJavaScript Object Notation      javascript对象表示法 通用的，描述对象的文本格式（独立于计算机语言与平台） javascript用JSON描述对象（json格式与创建javascript对象相同） json语法规则：  数据以键值对形式">
+<meta property="og:locale" content="zh-cn">
+<meta property="og:updated_time" content="2019-04-24T13:54:05.119Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="json,es6  面向对象">
+<meta name="twitter:description" content="json 制作jquery插件 es6 class extend bootstrap前端样式框架（额外内容）  jsonJavaScript Object Notation      javascript对象表示法 通用的，描述对象的文本格式（独立于计算机语言与平台） javascript用JSON描述对象（json格式与创建javascript对象相同） json语法规则：  数据以键值对形式">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Pisces',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":true,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2019/04/24/7-1/">
+
+
+
+
+
+  <title>json,es6  面向对象 | 方君</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-cn">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/" class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">方君</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">share&promote</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br>
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-categories">
+          <a href="/categories/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-th"></i> <br>
+            
+            Categories
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br>
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2019/04/24/7-1/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="方君">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="方君">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">json,es6  面向对象</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2019-04-24T21:51:30+08:00">
+                2019-04-24
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">In</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/笔记/" itemprop="url" rel="index">
+                    <span itemprop="name">笔记</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ol>
+<li>json</li>
+<li>制作jquery插件</li>
+<li>es6 class extend</li>
+<li>bootstrap前端样式框架（额外内容）</li>
+</ol>
+<h1 id="json"><a href="#json" class="headerlink" title="json"></a>json</h1><p><strong>J</strong>ava<strong>S</strong>cript <strong>O</strong>bject <strong>N</strong>otation      javascript对象表示法</p>
+<p>通用的，描述对象的文本格式（独立于计算机语言与平台）</p>
+<p>javascript用JSON描述对象（json格式与创建javascript对象相同）</p>
+<p>json语法规则：</p>
+<ul>
+<li>数据以键值对形式存在</li>
+<li>键与值以:（冒号）分隔，键值对以,（逗号）分隔</li>
+<li>字符串需要用双引号       <strong>!!!</strong></li>
+<li>花括号表示对象{}</li>
+<li>方括号表示数组[]</li>
+</ul>
+<p>json值可以为：</p>
+<ul>
+<li>字符串（双引号）</li>
+<li>数字</li>
+<li>Boolean( true,false)</li>
+<li>null</li>
+<li>对象    {}   //也不能有方法</li>
+<li>数组    []</li>
+</ul>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var obj=[&#123;"name":"dongfang","xing":"zhao"&#125;,&#123;"age":"18"&#125;,[&#123;"战斗力":"5"&#125;]]</span><br></pre></td></tr></table></figure>
+<h1 id="jquery插件制作"><a href="#jquery插件制作" class="headerlink" title="jquery插件制作"></a>jquery插件制作</h1><ol>
+<li><p>树形菜单</p>
+<ul>
+<li>event.stopPropagation();  停止冒泡</li>
+<li>模拟后台数据（json格式），同级菜单以数组保存，上下级菜单，是将下级菜单的数组放置到上级菜单的属性中（如children:[]）</li>
+<li>模拟后台数据时，注意格式要对应（用递归的方式取值）</li>
+</ul>
+</li>
+<li><p>轮播</p>
+<ul>
+<li>小技巧，切换显示时，可以关闭全部，打开当前</li>
+<li>$(selector).index()    是返回选择器在当前DOM结构节点下所处位置</li>
+</ul>
+<p>jquery插件：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line">$().on(<span class="string">""</span>,<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span> <span class="comment">//相当于既停止冒泡，又阻止默认行为</span></span><br><span class="line">    event.preventDefault();</span><br><span class="line">    event.stopPropagation();</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$.extend()<span class="comment">//创建jquery  工具插件  方法</span></span><br><span class="line">          <span class="comment">//创建好后，被放在$.prototype的constructor中</span></span><br><span class="line">$.extend(&#123;</span><br><span class="line">min: <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123; <span class="keyword">return</span> a &lt; b ? a : b; &#125;,</span><br><span class="line">max: <span class="function"><span class="keyword">function</span>(<span class="params">a, b</span>) </span>&#123; <span class="keyword">return</span> a &gt; b ? a : b; &#125;</span><br><span class="line">&#125;);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$.min(<span class="number">2</span>,<span class="number">3</span>); <span class="comment">//  2 </span></span><br><span class="line">$.max(<span class="number">4</span>,<span class="number">5</span>); <span class="comment">//  5</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">$.fn.extend()<span class="comment">//创建jquery  对象插件  方法    $.fn是jQuery原型对象</span></span><br><span class="line">             <span class="comment">//创建好后，被放在$.prototype中</span></span><br><span class="line">$.fn.extend(&#123;          </span><br><span class="line">    alertWhileClick:<span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;            </span><br><span class="line">          $(<span class="keyword">this</span>).click(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;                 </span><br><span class="line">                 alert($(<span class="keyword">this</span>).val());      <span class="comment">//弹出input窗里的内容     </span></span><br><span class="line">           &#125;);           </span><br><span class="line">     &#125;       </span><br><span class="line">&#125;);       </span><br><span class="line">$(<span class="string">"#input1"</span>).alertWhileClick();</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h1 id="es6-class类-extend类的继承"><a href="#es6-class类-extend类的继承" class="headerlink" title="es6 class类 extend类的继承"></a>es6 class类 extend类的继承</h1><ol>
+<li>class 类</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Point</span>(<span class="params">x,y</span>)</span>&#123; <span class="comment">//构造函数首字母大写 </span></span><br><span class="line">    <span class="keyword">this</span>.x=x;</span><br><span class="line">    <span class="keyword">this</span>.y=y;</span><br><span class="line">&#125;</span><br><span class="line">Point.prototype.toString=<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">"x"</span>+<span class="keyword">this</span>.x+<span class="string">",y="</span>+<span class="keyword">this</span>.y);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p=<span class="keyword">new</span> Point(<span class="number">1</span>,<span class="number">2</span>);       <span class="comment">//构造函数的使用 new</span></span><br></pre></td></tr></table></figure>
+<p>因为传统语言，c,java等有class这个概念，所以ES6中新增了一种新的定义构造函数的写法class</p>
+<p>es6类class本质是对es5中构造函数的一层包装          ！！！</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span></span>&#123;</span><br><span class="line">                         <span class="comment">//所有函数都绑定在prototype里</span></span><br><span class="line">    <span class="keyword">constructor</span>(x,y)&#123;    <span class="comment">//constructor方法相当于绑定在构造函数的constructor中</span></span><br><span class="line">        <span class="keyword">this</span>.x=x;</span><br><span class="line">        <span class="keyword">this</span>.y=y;</span><br><span class="line">    &#125;                    <span class="comment">//不需要用,分隔</span></span><br><span class="line">    </span><br><span class="line">    toString()&#123;          <span class="comment">//不需要加function关键字</span></span><br><span class="line">       <span class="built_in">console</span>.log(<span class="string">"x"</span>+<span class="keyword">this</span>.x+<span class="string">",y="</span>+<span class="keyword">this</span>.y);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">var</span> p=<span class="keyword">new</span> Point(<span class="number">1</span>,<span class="number">2</span>);     <span class="comment">//使用与普通构造函数一致</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="keyword">typeof</span> Point);<span class="comment">//function</span></span><br><span class="line"><span class="built_in">console</span>.log(Point===Point.prototype.constructor)<span class="comment">//true</span></span><br></pre></td></tr></table></figure>
+<p>class特点：</p>
+<ol>
+<li>定义时内部函数全部绑定在prototype上</li>
+<li>函数之间无需用,（逗号分隔）</li>
+<li>函数不需要添加关键字function</li>
+<li>使用必须要用new关键字，否则报错</li>
+<li>不存在变量提升，只能在类定义之后创建实例</li>
+</ol>
+<hr>
+<ol start="2">
+<li>extends类的继承</li>
+</ol>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Point</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ColorPoint</span> <span class="keyword">extends</span> <span class="title">Point</span></span>&#123;</span><br><span class="line">    </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>使用extends继承类，可以继承全部的属性和方法！</p>
+<p>子类中的constructor必须使用super调用父类的constructor，否则报错！</p>
+<p>因为子类的对象必须先使用父类构造函数，然后再添加新的属性和方法！</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">ColorPoint</span> <span class="keyword">extends</span> <span class="title">Point</span> </span>&#123;</span><br><span class="line">  <span class="keyword">constructor</span>(x, y, color) &#123;</span><br><span class="line">    <span class="keyword">super</span>(x, y); <span class="comment">// 调用父类的constructor(x, y)</span></span><br><span class="line">    <span class="keyword">this</span>.color = color;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  toString() &#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="keyword">this</span>.color + <span class="string">' '</span> + <span class="keyword">super</span>.toString(); <span class="comment">// 调用父类的toString()</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">//新增方法，获取父类     仅在使用class时有效！</span></span><br><span class="line"><span class="built_in">Object</span>.getPrototypeOf(ColorPoint)  <span class="comment">//Point</span></span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2019/04/24/cookie/" rel="next" title="cookie">
+                <i class="fa fa-chevron-left"></i> cookie
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2019/04/24/7-2/" rel="prev" title="模块化开发">
+                模块化开发 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">方君</p>
+              <p class="site-description motion-element" itemprop="description">方君的个人博客，技术分享，生活交流。</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">25</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-categories">
+                <a href="/categories/index.html">
+                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-name">categories</span>
+                </a>
+              </div>
+            
+
+            
+
+          </nav>
+
+          
+
+          
+            <div class="links-of-author motion-element">
+                
+                  <span class="links-of-author-item">
+                    <a href="https://github.com/qiangweishangluo" target="_blank" title="GitHub">
+                      
+                        <i class="fa fa-fw fa-github"></i>GitHub</a>
+                  </span>
+                
+                  <span class="links-of-author-item">
+                    <a href="mailto:zzz895000780@163.com" target="_blank" title="E-Mail">
+                      
+                        <i class="fa fa-fw fa-envelope"></i>E-Mail</a>
+                  </span>
+                
+            </div>
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#json"><span class="nav-number">1.</span> <span class="nav-text">json</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#jquery插件制作"><span class="nav-number">2.</span> <span class="nav-text">jquery插件制作</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#es6-class类-extend类的继承"><span class="nav-number">3.</span> <span class="nav-text">es6 class类 extend类的继承</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2019</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">方君</span>
+
+  
+</div>
+
+
+
+
+
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/canvas-nest/canvas-nest.min.js"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+
+  <script type="text/javascript" src="/js/src/affix.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/schemes/pisces.js?v=5.1.4"></script>
+
+
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
